@@ -8,320 +8,318 @@
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
---bg: #F7F5F0;
---surface: #FFFFFF;
---ink: #1A1814;
---ink2: #5C5A54;
---ink3: #9A9890;
---accent: #2D5F4A;
---accent-light: #E1F0E8;
---border: rgba(26,24,20,0.1);
---serif: 'DM Serif Display', Georgia, serif;
---sans: 'DM Sans', system-ui, sans-serif;
+  --bg: #13111C;
+  --surface: #1E1A2E;
+  --surface2: #251F38;
+  --ink: #F0ECFF;
+  --ink2: #B8B0D8;
+  --ink3: #7A6FA0;
+  --accent: #7C3AED;
+  --accent-mid: #9B59F5;
+  --accent-pale: rgba(124,58,237,0.15);
+  --border: rgba(167,139,250,0.15);
+  --serif: 'DM Serif Display', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
 }
 html { scroll-behavior: smooth; }
 body {
-font-family: var(--sans);
-background: var(--bg);
-color: var(--ink);
-font-size: 16px;
-line-height: 1.7;
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.7;
 }
+
 /* NAV */
 nav {
-position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-display: flex; align-items: center; justify-content: space-between;
-padding: 1.25rem 3rem;
-background: rgba(247,245,240,0.92);
-backdrop-filter: blur(8px);
-border-bottom: 1px solid var(--border);
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.25rem 3rem;
+  background: rgba(19,17,28,0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
 }
 .nav-logo {
-font-family: var(--serif);
-font-size: 1.25rem;
-color: var(--ink);
-text-decoration: none;
-letter-spacing: 0.01em;
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: 0.01em;
 }
 .nav-links { display: flex; gap: 2rem; list-style: none; }
 .nav-links a {
-font-size: 0.875rem;
-font-weight: 400;
-color: var(--ink2);
-text-decoration: none;
-letter-spacing: 0.04em;
-text-transform: uppercase;
-transition: color 0.2s;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--ink2);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color 0.2s;
 }
-.nav-links a:hover { color: var(--accent); }
-/* SECTIONS */
+.nav-links a:hover { color: var(--accent-mid); }
+
 section { padding: 7rem 0; }
 .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+
 /* HERO */
 #hero {
-min-height: 100vh;
-display: flex; align-items: center;
-padding-top: 5rem;
-background: var(--bg);
-position: relative;
-overflow: hidden;
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding-top: 5rem;
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
 }
 #hero::before {
-content: '';
-position: absolute;
-top: -120px; right: -120px;
-width: 500px; height: 500px;
-border-radius: 50%;
-background: var(--accent-light);
-opacity: 0.5;
-pointer-events: none;
+  content: '';
+  position: absolute;
+  top: -120px; right: -120px;
+  width: 520px; height: 520px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.12;
+  pointer-events: none;
+}
+#hero::after {
+  content: '';
+  position: absolute;
+  bottom: -80px; left: -80px;
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  background: var(--accent-mid);
+  opacity: 0.07;
+  pointer-events: none;
 }
 .hero-eyebrow {
-font-size: 0.8rem;
-font-weight: 500;
-letter-spacing: 0.12em;
-text-transform: uppercase;
-color: var(--accent);
-margin-bottom: 1.25rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-mid);
+  margin-bottom: 1.25rem;
 }
 .hero-name {
-font-family: var(--serif);
-font-size: clamp(3rem, 8vw, 5.5rem);
-line-height: 1.05;
-color: var(--ink);
-margin-bottom: 1.5rem;
+  font-family: var(--serif);
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  line-height: 1.05;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
 }
-.hero-name em { font-style: italic; color: var(--accent); }
+.hero-name em { font-style: italic; color: var(--accent-mid); }
 .hero-desc {
-font-size: 1.125rem;
-color: var(--ink2);
-max-width: 520px;
-margin-bottom: 2.5rem;
-font-weight: 300;
-line-height: 1.75;
+  font-size: 1.125rem;
+  color: var(--ink2);
+  max-width: 520px;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+  line-height: 1.75;
 }
 .hero-links { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
 .btn {
-display: inline-flex; align-items: center; gap: 0.4rem;
-padding: 0.7rem 1.5rem;
-border-radius: 2px;
-font-size: 0.875rem;
-font-weight: 500;
-letter-spacing: 0.04em;
-text-transform: uppercase;
-text-decoration: none;
-transition: all 0.2s;
-cursor: pointer;
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  padding: 0.7rem 1.5rem;
+  border-radius: 2px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
 }
-.btn-primary {
-background: var(--accent);
-color: #fff;
-border: 1.5px solid var(--accent);
-}
-.btn-primary:hover { background: #1E4234; border-color: #1E4234; }
-.btn-outline {
-background: transparent;
-color: var(--ink);
-border: 1.5px solid var(--border);
-}
-.btn-outline:hover { border-color: var(--ink2); }
+.btn-primary { background: var(--accent); color: #fff; border: 1.5px solid var(--accent); }
+.btn-primary:hover { background: #6D28D9; border-color: #6D28D9; }
+.btn-outline { background: transparent; color: var(--ink); border: 1.5px solid var(--border); }
+.btn-outline:hover { border-color: var(--accent-mid); color: var(--accent-mid); }
+
 /* SECTION HEADERS */
 .section-label {
-font-size: 0.75rem;
-font-weight: 500;
-letter-spacing: 0.14em;
-text-transform: uppercase;
-color: var(--accent);
-margin-bottom: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-mid);
+  margin-bottom: 0.75rem;
 }
 .section-title {
-font-family: var(--serif);
-font-size: clamp(2rem, 4vw, 2.75rem);
-line-height: 1.15;
-color: var(--ink);
-margin-bottom: 3rem;
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  line-height: 1.15;
+  color: var(--ink);
+  margin-bottom: 3rem;
 }
-/* DIVIDER */
-.divider {
-width: 48px; height: 2px;
-background: var(--accent);
-margin: 1rem 0 2.5rem;
-}
+
 /* ABOUT */
 #about { background: var(--surface); }
 .about-grid {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 4rem;
-align-items: start;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
 }
 .about-text p { color: var(--ink2); margin-bottom: 1rem; font-weight: 300; }
-.about-stats {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 1.5rem;
-}
+.about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 .stat-card {
-padding: 1.5rem;
-border: 1px solid var(--border);
-border-radius: 2px;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  background: var(--surface2);
 }
 .stat-num {
-font-family: var(--serif);
-font-size: 2.25rem;
-color: var(--accent);
-line-height: 1;
-margin-bottom: 0.4rem;
+  font-family: var(--serif);
+  font-size: 2.25rem;
+  color: var(--accent-mid);
+  line-height: 1;
+  margin-bottom: 0.4rem;
 }
 .stat-label { font-size: 0.8rem; color: var(--ink3); letter-spacing: 0.05em; }
-/* EXPERIENCE */
-#experience { background: var(--bg); }
+
+/* EXPERIENCE + LEADERSHIP shared styles */
 .exp-list { display: flex; flex-direction: column; gap: 0; }
 .exp-item {
-display: grid;
-grid-template-columns: 180px 1fr;
-gap: 2rem;
-padding: 2rem 0;
-border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 2rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--border);
 }
 .exp-item:first-child { border-top: 1px solid var(--border); }
-.exp-date {
-font-size: 0.8rem;
-color: var(--ink3);
-letter-spacing: 0.04em;
-padding-top: 0.25rem;
-}
-.exp-role {
-font-weight: 500;
-font-size: 1rem;
-color: var(--ink);
-margin-bottom: 0.2rem;
-}
-.exp-company {
-font-size: 0.875rem;
-color: var(--accent);
-margin-bottom: 0.75rem;
-font-weight: 500;
-}
+.exp-date { font-size: 0.8rem; color: var(--ink3); letter-spacing: 0.04em; padding-top: 0.25rem; }
+.exp-role { font-weight: 500; font-size: 1rem; color: var(--ink); margin-bottom: 0.2rem; }
+.exp-company { font-size: 0.875rem; color: var(--accent-mid); margin-bottom: 0.75rem; font-weight: 500; }
 .exp-bullets { padding-left: 1rem; }
-.exp-bullets li {
-font-size: 0.9rem;
-color: var(--ink2);
-margin-bottom: 0.35rem;
-font-weight: 300;
-}
+.exp-bullets li { font-size: 0.9rem; color: var(--ink2); margin-bottom: 0.35rem; font-weight: 300; }
+
+#experience { background: var(--bg); }
+#leadership { background: var(--surface); }
+
 /* PROJECTS */
-#projects { background: var(--surface); }
+#projects { background: var(--bg); }
 .projects-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-gap: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
 }
 .project-card {
-padding: 1.75rem;
-border: 1px solid var(--border);
-border-radius: 2px;
-background: var(--bg);
-transition: border-color 0.2s, transform 0.2s;
-display: flex;
-flex-direction: column;
+  padding: 1.75rem;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  background: var(--surface2);
+  transition: border-color 0.2s, transform 0.2s;
+  display: flex; flex-direction: column;
 }
-.project-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.project-card:hover { border-color: var(--accent-mid); transform: translateY(-2px); }
 .project-tag {
-display: inline-block;
-font-size: 0.7rem;
-letter-spacing: 0.08em;
-text-transform: uppercase;
-color: var(--accent);
-font-weight: 500;
-margin-bottom: 0.75rem;
+  display: inline-block;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-mid);
+  font-weight: 500;
+  margin-bottom: 0.75rem;
 }
 .project-name {
-font-family: var(--serif);
-font-size: 1.25rem;
-color: var(--ink);
-margin-bottom: 0.75rem;
-line-height: 1.3;
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  color: var(--ink);
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
 }
 .project-desc {
-font-size: 0.875rem;
-color: var(--ink2);
-font-weight: 300;
-flex: 1;
-margin-bottom: 1.25rem;
-line-height: 1.65;
+  font-size: 0.875rem;
+  color: var(--ink2);
+  font-weight: 300;
+  flex: 1;
+  margin-bottom: 1.25rem;
+  line-height: 1.65;
 }
 .tech-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 .tech-tag {
-font-size: 0.7rem;
-padding: 0.2rem 0.6rem;
-background: var(--accent-light);
-color: var(--accent);
-border-radius: 2px;
-font-weight: 500;
-letter-spacing: 0.04em;
+  font-size: 0.7rem;
+  padding: 0.2rem 0.6rem;
+  background: var(--accent-pale);
+  color: #A78BFA;
+  border-radius: 2px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  border: 1px solid rgba(167,139,250,0.2);
 }
+
 /* SKILLS */
-#skills { background: var(--bg); }
+#skills { background: var(--surface); }
 .skills-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
 }
 .skill-group-title {
-font-size: 0.75rem;
-font-weight: 500;
-letter-spacing: 0.1em;
-text-transform: uppercase;
-color: var(--ink3);
-margin-bottom: 1rem;
-padding-bottom: 0.5rem;
-border-bottom: 1px solid var(--border);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
 }
 .skill-list { list-style: none; }
 .skill-list li {
-font-size: 0.9rem;
-color: var(--ink2);
-padding: 0.35rem 0;
-font-weight: 300;
-border-bottom: 1px solid rgba(26,24,20,0.05);
+  font-size: 0.9rem;
+  color: var(--ink2);
+  padding: 0.35rem 0;
+  font-weight: 300;
+  border-bottom: 1px solid rgba(167,139,250,0.07);
 }
 .skill-list li:last-child { border: none; }
+
 /* CONTACT */
 #contact {
-background: var(--ink);
-color: #fff;
-text-align: center;
-padding: 5rem 0;
+  background: var(--bg);
+  color: var(--ink);
+  text-align: center;
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
 }
-#contact .section-label { color: #7FC4A0; }
-#contact .section-title { color: #fff; margin-bottom: 1rem; }
-#contact p { color: rgba(255,255,255,0.6); margin-bottom: 2.5rem; font-weight: 300; }
-#contact .btn-primary { background: #2D5F4A; border-color: #2D5F4A; }
-#contact .btn-primary:hover { background: #1E4234; }
-#contact .btn-outline { color: #fff; border-color: rgba(255,255,255,0.3); }
-#contact .btn-outline:hover { border-color: rgba(255,255,255,0.7); }
+#contact::before {
+  content: '';
+  position: absolute;
+  top: -60px; left: 50%;
+  transform: translateX(-50%);
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.08;
+  pointer-events: none;
+}
+#contact .section-label { color: var(--accent-mid); }
+#contact .section-title { color: var(--ink); margin-bottom: 1rem; }
+#contact p { color: var(--ink2); margin-bottom: 2.5rem; font-weight: 300; }
+#contact .btn-outline { color: var(--ink2); border-color: var(--border); }
+#contact .btn-outline:hover { border-color: var(--accent-mid); color: var(--accent-mid); }
+
 /* FOOTER */
 footer {
-background: var(--ink);
-border-top: 1px solid rgba(255,255,255,0.08);
-text-align: center;
-padding: 1.5rem;
-font-size: 0.8rem;
-color: rgba(255,255,255,0.3);
+  background: #0D0B14;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.8rem;
+  color: var(--ink3);
 }
+
 /* RESPONSIVE */
 @media (max-width: 700px) {
-nav { padding: 1rem 1.5rem; }
-.nav-links { gap: 1.25rem; }
-.about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-.exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
-section { padding: 5rem 0; }
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { gap: 1.25rem; }
+  .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
+  section { padding: 5rem 0; }
 }
-/* ANIMATIONS */
+
 @keyframes fadeUp {
-from { opacity: 0; transform: translateY(24px); }
-to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 .hero-eyebrow { animation: fadeUp 0.6s ease both; }
 .hero-name { animation: fadeUp 0.6s 0.1s ease both; }
@@ -330,264 +328,269 @@ to { opacity: 1; transform: translateY(0); }
 </style>
 </head>
 <body>
+
 <nav>
-<a class="nav-logo" href="#hero">RS</a>
-<ul class="nav-links">
-<li><a href="#about">About</a></li>
-<li><a href="#experience">Experience</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
+  <a class="nav-logo" href="#hero">RS</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#leadership">Leadership</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
-<div class="container">
-<p class="hero-eyebrow">EECS + Bioengineering @ UC Berkeley</p>
-<h1 class="hero-name">Roopa<br><em>Srinivas</em></h1>
-<p class="hero-desc">I build things at the intersection of technology and human impact, from AI-powered tools to community-driven platforms. Currently pursuing a B.S. in Electrical Engineering and Computer Science with a minor in Bioengineering.</p>
-<div class="hero-links">
-<a class="btn btn-primary" href="#projects">View Projects</a>
-<a class="btn btn-outline" href="mailto:roopasrinivas@berkeley.edu">Get in Touch</a>
-<a class="btn btn-outline" href="https://linkedin.com/in/roopa-srinivas/" target="_blank">LinkedIn</a>
-</div>
-</div>
+  <div class="container">
+    <p class="hero-eyebrow">EECS + Bioengineering @ UC Berkeley</p>
+    <h1 class="hero-name">Roopa<br><em>Srinivas</em></h1>
+    <p class="hero-desc">I build things at the intersection of technology and human impact, from AI-powered tools to community-driven platforms. Currently pursuing a B.S. in Electrical Engineering and Computer Science with a minor in Bioengineering.</p>
+    <div class="hero-links">
+      <a class="btn btn-primary" href="#projects">View Projects</a>
+      <a class="btn btn-outline" href="mailto:roopasrinivas@berkeley.edu">Get in Touch</a>
+      <a class="btn btn-outline" href="https://linkedin.com/in/roopa-srinivas/" target="_blank">LinkedIn</a>
+    </div>
+  </div>
 </section>
 
 <!-- ABOUT -->
 <section id="about">
-<div class="container">
-<p class="section-label">About</p>
-<h2 class="section-title">Builder, thinker,<br>problem solver.</h2>
-<div class="about-grid">
-<div class="about-text">
-<p>I'm a third-year EECS student at UC Berkeley with a minor in Bioengineering. My interests span AI, full-stack development, and the ways technology can improve people's lives, particularly in healthcare and education.</p>
-<p>I've trained large language models, built data visualization dashboards, led the mechanical design of a 120-pound competition robot, and developed community platforms with real-world impact.</p>
-<p>Outside of engineering, I compete as a dancer on UC Berkeley's Zahanat team, where I also manage logistics for 20+ members at national competitions.</p>
-</div>
-<div class="about-stats">
-<div class="stat-card">
-<div class="stat-num">2027</div>
-<div class="stat-label">Expected graduation</div>
-</div>
-<div class="stat-card">
-<div class="stat-num">4+</div>
-<div class="stat-label">Projects shipped</div>
-</div>
-<div class="stat-card">
-<div class="stat-num">$2M</div>
-<div class="stat-label">Grant research supported</div>
-</div>
-<div class="stat-card">
-<div class="stat-num">120lb</div>
-<div class="stat-label">Robot built from scratch</div>
-</div>
-</div>
-</div>
-</div>
+  <div class="container">
+    <p class="section-label">About</p>
+    <h2 class="section-title">Builder, thinker,<br>problem solver.</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I'm a fourth-year EECS student at UC Berkeley with a minor in Bioengineering. My interests span AI, full-stack development, and the ways technology can improve people's lives, particularly in healthcare and education.</p>
+        <p>I've trained large language models, built data visualization dashboards, led the mechanical design of a 120-pound competition robot, and developed community platforms with real-world impact.</p>
+        <p>Outside of engineering, I compete as a dancer on UC Berkeley's Zahanat team, where I also manage logistics for 20+ members at national competitions.</p>
+      </div>
+      <div class="about-stats">
+        <div class="stat-card"><div class="stat-num">2027</div><div class="stat-label">Expected graduation</div></div>
+        <div class="stat-card"><div class="stat-num">4+</div><div class="stat-label">Projects shipped</div></div>
+        <div class="stat-card"><div class="stat-num">$2M</div><div class="stat-label">Grant research supported</div></div>
+        <div class="stat-card"><div class="stat-num">120lb</div><div class="stat-label">Robot built from scratch</div></div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- EXPERIENCE -->
 <section id="experience">
-<div class="container">
-<p class="section-label">Experience</p>
-<h2 class="section-title">Where I've worked<br>and what I've done.</h2>
-<div class="exp-list">
+  <div class="container">
+    <p class="section-label">Experience</p>
+    <h2 class="section-title">Where I've worked<br>and what I've done.</h2>
+    <div class="exp-list">
 
-<div class="exp-item">
-<div class="exp-date">Dec 2025 – Present</div>
-<div>
-<div class="exp-role">AI/ML Engineer</div>
-<div class="exp-company">Handshake AI Fellowship</div>
-<ul class="exp-bullets">
-<li>Evaluated and ranked LLM-generated responses across complex subject-specific prompts to improve reasoning quality via RLHF.</li>
-<li>Audited multi-turn dialogues for logical consistency and instruction following, contributing feedback to next-generation model training.</li>
-<li>Applied EECS and biology domain knowledge to assess model accuracy on technical problem-solving tasks.</li>
-</ul>
-</div>
-</div>
+      <div class="exp-item">
+        <div class="exp-date">Dec 2025 – Present</div>
+        <div>
+          <div class="exp-role">AI/ML Engineer</div>
+          <div class="exp-company">Handshake AI Fellowship</div>
+          <ul class="exp-bullets">
+            <li>Evaluated and ranked LLM-generated responses across complex subject-specific prompts to improve reasoning quality via RLHF.</li>
+            <li>Audited multi-turn dialogues for logical consistency and instruction following, contributing feedback to next-generation model training.</li>
+            <li>Applied EECS and biology domain knowledge to assess model accuracy on technical problem-solving tasks.</li>
+          </ul>
+        </div>
+      </div>
 
-<div class="exp-item">
-<div class="exp-date">Jun – Aug 2025</div>
-<div>
-<div class="exp-role">Software Engineering Intern</div>
-<div class="exp-company">Arcadia Science</div>
-<ul class="exp-bullets">
-<li>Built sample tracking and experiment logging features in React and TypeScript, enabling scientists to record and query genomic results.</li>
-<li>Integrated REST APIs with a FastAPI backend to manage biological sample metadata across multi-week experiment timelines.</li>
-<li>Wrote unit tests with Jest to bring coverage to 70%+ on core workflows, catching edge cases before reaching researchers.</li>
-<li>Shipped features used directly by in-house biologists weekly, collaborating with engineers and scientists in an Agile environment.</li>
-</ul>
-</div>
-</div>
+      <div class="exp-item">
+        <div class="exp-date">Jun – Aug 2025</div>
+        <div>
+          <div class="exp-role">Software Engineering Intern</div>
+          <div class="exp-company">Arcadia Science</div>
+          <ul class="exp-bullets">
+            <li>Built sample tracking and experiment logging features in React and TypeScript, enabling scientists to record and query genomic results.</li>
+            <li>Integrated REST APIs with a FastAPI backend to manage biological sample metadata across multi-week experiment timelines.</li>
+            <li>Wrote unit tests with Jest to bring coverage to 70%+ on core workflows, catching edge cases before reaching researchers.</li>
+            <li>Shipped features used directly by in-house biologists weekly, collaborating with engineers and scientists in an Agile environment.</li>
+          </ul>
+        </div>
+      </div>
 
-<div class="exp-item">
-<div class="exp-date">Aug – Dec 2025</div>
-<div>
-<div class="exp-role">Instructor, Interviewer & Trainer</div>
-<div class="exp-company">Kodely</div>
-<ul class="exp-bullets">
-<li>Conducted STEM workshops for elementary students, creating interactive and standards-aligned activities.</li>
-<li>Evaluated candidate interviews to assess qualifications for enrichment programs.</li>
-<li>Designed training sessions to onboard new instructors on curriculum delivery, safety, and operations.</li>
-</ul>
-</div>
-</div>
+      <div class="exp-item">
+        <div class="exp-date">Sep – Dec 2023</div>
+        <div>
+          <div class="exp-role">Project Intern</div>
+          <div class="exp-company">PainVox</div>
+          <ul class="exp-bullets">
+            <li>Analyzed 10,000+ entries from Stanford clinical trials using LLMs to identify critical patterns and outliers in pain research data.</li>
+            <li>Authored research summaries supporting grant applications worth $500K–$2M.</li>
+            <li>Wrote successful award nominations for company medical professionals to the National Pain Consortium.</li>
+          </ul>
+        </div>
+      </div>
 
-<div class="exp-item">
-<div class="exp-date">Sep – Dec 2023</div>
-<div>
-<div class="exp-role">Project Intern</div>
-<div class="exp-company">PainVox</div>
-<ul class="exp-bullets">
-<li>Analyzed trial data from Stanford clinical trials using LLMs to streamline workflows for 10,000+ entries.</li>
-<li>Produced research summaries for grants worth $500,000 to $2 million.</li>
-<li>Wrote successful nominations for medical professionals to the National Pain Consortium.</li>
-</ul>
-</div>
-</div>
+    </div>
+  </div>
+</section>
 
-<div class="exp-item">
-<div class="exp-date">May 2022 – May 2023</div>
-<div>
-<div class="exp-role">Mechanical Lead</div>
-<div class="exp-company">Homestead Robotics, Team 670</div>
-<ul class="exp-bullets">
-<li>Directed start-to-finish design and fabrication of a multi-functional 120-pound robot in an 8-week build season.</li>
-<li>Utilized CAD software to develop and integrate complex robot subsystems.</li>
-<li>Pioneered a method for producing 3D structures in a high school machine shop, expanding team capabilities.</li>
-</ul>
-</div>
-</div>
+<!-- LEADERSHIP -->
+<section id="leadership">
+  <div class="container">
+    <p class="section-label">Leadership & Activities</p>
+    <h2 class="section-title">How I lead<br>outside the codebase.</h2>
+    <div class="exp-list">
 
-</div>
-</div>
+      <div class="exp-item">
+        <div class="exp-date">May 2025 – Apr 2026</div>
+        <div>
+          <div class="exp-role">Logistics Captain</div>
+          <div class="exp-company">UC Berkeley Zahanat</div>
+          <ul class="exp-bullets">
+            <li>Spearheaded logistics for a nationally competitive dance team, coordinating travel, accommodations, and registrations for competitions.</li>
+            <li>Managed team scheduling and rehearsal calendars for 20+ members, aligning intensive training timelines with national competition deadlines.</li>
+            <li>Competed as a dancer while simultaneously managing travel and competition logistics, contributing to multiple awards.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-date">Aug – Dec 2025</div>
+        <div>
+          <div class="exp-role">Instructor, Interviewer & Trainer</div>
+          <div class="exp-company">Kodely</div>
+          <ul class="exp-bullets">
+            <li>Conducted STEM workshops for elementary students in afterschool settings, creating interactive and standards-aligned activities to foster curiosity and foundational skills.</li>
+            <li>Evaluated candidate interviews to assess qualifications and fit for delivering enrichment programs.</li>
+            <li>Designed and facilitated training sessions to onboard new instructors, covering curriculum delivery, safety, and operational procedures.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-date">May 2022 – May 2023</div>
+        <div>
+          <div class="exp-role">Mechanical Lead</div>
+          <div class="exp-company">Homestead Robotics, Team 670</div>
+          <ul class="exp-bullets">
+            <li>Led design and fabrication of a 120-pound competition robot over an 8-week build season using CAD and CNC software.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
-<div class="container">
-<p class="section-label">Projects</p>
-<h2 class="section-title">Things I've built.</h2>
-<div class="projects-grid">
-<a href="https://roopa-srinivas.github.io/BoostYourCommunity/" target="_blank" style="text-decoration: none; display: contents;">
-<div class="project-card">
-<span class="project-tag">Web Application</span>
-<h3 class="project-name">Boost Your Community</h3>
-<p class="project-desc">A community-driven donation platform connecting local donors with homeless shelters in real time. Features an interactive map, request verification system, and gamification to drive donor engagement.</p>
-<div class="tech-tags">
-<span class="tech-tag">HTML/CSS/JS</span>
-<span class="tech-tag">Tailwind CSS</span>
-<span class="tech-tag">Leaflet.js</span>
-<span class="tech-tag">DiceBear API</span>
-</div>
-</div>
-</a>
-<a href="https://roopa-srinivas.github.io/GroceryStoreApplication/" target="_blank" style="text-decoration: none; display: contents;">
-<div class="project-card">
-<span class="project-tag">Full-Stack Application</span>
-<h3 class="project-name">Grocery Store App</h3>
-<p class="project-desc">A full-stack grocery store database application to organize inventory and web orders, with a JavaScript frontend and Python Flask backend connected to a MySQL database.</p>
-<div class="tech-tags">
-<span class="tech-tag">Python Flask</span>
-<span class="tech-tag">MySQL</span>
-<span class="tech-tag">HTML/CSS/JS</span>
-</div>
-</div>
-</a>
-<a href="https://roopa-srinivas.github.io/COVIDVaccineTracker/" target="_blank" style="text-decoration: none; display: contents;">
-<div class="project-card">
-<span class="project-tag">Data Visualization</span>
-<h3 class="project-name">COVID Vaccine Tracker</h3>
-<p class="project-desc">An interactive map dashboard displaying live CDC data on COVID cases, vaccines administered, and brand-specific statistics including vaccine facts for each company.</p>
-<div class="tech-tags">
-<span class="tech-tag">Java</span>
-<span class="tech-tag">CDC Data API</span>
-</div>
-</div>
-</a>
-<div class="project-card">
-<span class="project-tag">Financial Tool</span>
-<h3 class="project-name">Investment Indexer</h3>
-<p class="project-desc">A financial analysis program tracking over 1,000 stocks and funds, sorting top and bottom-performing investment indexes over the past 15 years with a comprehensive Python display.</p>
-<div class="tech-tags">
-<span class="tech-tag">Python</span>
-</div>
-</div>
-</div>
-</div>
+  <div class="container">
+    <p class="section-label">Projects</p>
+    <h2 class="section-title">Things I've built.</h2>
+    <div class="projects-grid">
+      <a href="https://roopa-srinivas.github.io/BoostYourCommunity/" target="_blank" style="text-decoration: none; display: contents;">
+        <div class="project-card">
+          <span class="project-tag">Web Application</span>
+          <h3 class="project-name">Boost Your Community</h3>
+          <p class="project-desc">A community-driven donation platform connecting local donors with homeless shelters to address food, water, and clothing shortages in real-time. Features an interactive map, request verification system, and gamification to drive donor engagement.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">HTML/CSS/JS</span>
+            <span class="tech-tag">Tailwind CSS</span>
+            <span class="tech-tag">Leaflet.js</span>
+            <span class="tech-tag">DiceBear API</span>
+          </div>
+        </div>
+      </a>
+      <a href="https://roopa-srinivas.github.io/GroceryStoreApplication/" target="_blank" style="text-decoration: none; display: contents;">
+        <div class="project-card">
+          <span class="project-tag">Full-Stack Application</span>
+          <h3 class="project-name">Grocery Store App</h3>
+          <p class="project-desc">A full-stack grocery store app with a Python Flask backend and MySQL database, supporting inventory management and order processing with a relational schema for structured querying.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Python Flask</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">HTML/CSS/JS</span>
+          </div>
+        </div>
+      </a>
+      <a href="https://roopa-srinivas.github.io/COVIDVaccineTracker/" target="_blank" style="text-decoration: none; display: contents;">
+        <div class="project-card">
+          <span class="project-tag">Data Visualization</span>
+          <h3 class="project-name">COVID Vaccine Tracker</h3>
+          <p class="project-desc">An interactive Java dashboard visualizing live CDC data on case counts, vaccination rates, and brand-specific vaccine information across all 50 states, with dynamic map rendering.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Java</span>
+            <span class="tech-tag">CDC Data API</span>
+          </div>
+        </div>
+      </a>
+      <div class="project-card">
+        <span class="project-tag">Financial Tool</span>
+        <h3 class="project-name">Investment Indexer</h3>
+        <p class="project-desc">A Python tool to rank top and bottom-performing investment indexes over 15 years, analyzing 1,000+ stocks and funds with sortable performance reports across configurable time windows.</p>
+        <div class="tech-tags">
+          <span class="tech-tag">Python</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- SKILLS -->
 <section id="skills">
-<div class="container">
-<p class="section-label">Skills</p>
-<h2 class="section-title">What I work with.</h2>
-<div class="skills-grid">
-<div>
-<p class="skill-group-title">Languages</p>
-<ul class="skill-list">
-<li>Java</li>
-<li>Python</li>
-<li>SQL</li>
-<li>C++</li>
-<li>HTML / CSS</li>
-<li>JavaScript</li>
-<li>TypeScript</li>
-</ul>
-</div>
-<div>
-<p class="skill-group-title">Frameworks & Tools</p>
-<ul class="skill-list">
-<li>React</li>
-<li>Flask</li>
-<li>FastAPI</li>
-<li>MySQL</li>
-<li>Jest</li>
-<li>Git</li>
-<li>Figma</li>
-<li>Linear</li>
-</ul>
-</div>
-<div>
-<p class="skill-group-title">Coursework</p>
-<ul class="skill-list">
-<li>Data Structures & Algorithms</li>
-<li>Introduction to AI</li>
-<li>Machine Learning for Comp Bio</li>
-<li>Computer Graphics</li>
-<li>Machine Structures</li>
-</ul>
-</div>
-<div>
-<p class="skill-group-title">Design & Productivity</p>
-<ul class="skill-list">
-<li>Canva</li>
-<li>DaVinci Resolve</li>
-<li>Microsoft Office Suite</li>
-<li>Google Workspace</li>
-</ul>
-</div>
-</div>
-</div>
+  <div class="container">
+    <p class="section-label">Skills</p>
+    <h2 class="section-title">What I work with.</h2>
+    <div class="skills-grid">
+      <div>
+        <p class="skill-group-title">Languages</p>
+        <ul class="skill-list">
+          <li>Java</li>
+          <li>Python</li>
+          <li>SQL</li>
+          <li>C++</li>
+          <li>HTML / CSS</li>
+          <li>JavaScript</li>
+          <li>TypeScript</li>
+        </ul>
+      </div>
+      <div>
+        <p class="skill-group-title">Tools & Frameworks</p>
+        <ul class="skill-list">
+          <li>React</li>
+          <li>Flask</li>
+          <li>FastAPI</li>
+          <li>MySQL</li>
+          <li>Jest</li>
+          <li>Git</li>
+          <li>Figma</li>
+          <li>Linear</li>
+        </ul>
+      </div>
+      <div>
+        <p class="skill-group-title">Coursework</p>
+        <ul class="skill-list">
+          <li>Introduction to Artificial Intelligence</li>
+          <li>Machine Learning for Computational Biology</li>
+          <li>Foundations of Computer Graphics</li>
+          <li>Structure and Interpretation of Computer Systems</li>
+          <li>Data Abstraction and Structures</li>
+          <li>Instrumentation in Biology and Medicine</li>
+          <li>Physiology</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-<div class="container">
-<p class="section-label">Contact</p>
-<h2 class="section-title">Let's connect.</h2>
-<p>Open to internship opportunities, collaborations, and interesting conversations.</p>
-<div class="hero-links" style="justify-content: center;">
-<a class="btn btn-primary" href="mailto:roopasrinivas@berkeley.edu">roopasrinivas@berkeley.edu</a>
-<a class="btn btn-outline" href="https://linkedin.com/in/roopa-srinivas/" target="_blank">LinkedIn</a>
-</div>
-</div>
+  <div class="container" style="position:relative;z-index:1;">
+    <p class="section-label">Contact</p>
+    <h2 class="section-title">Let's connect.</h2>
+    <p>Open to internship opportunities, collaborations, and interesting conversations.</p>
+    <div class="hero-links" style="justify-content: center;">
+      <a class="btn btn-primary" href="mailto:roopasrinivas@berkeley.edu">roopasrinivas@berkeley.edu</a>
+      <a class="btn btn-outline" href="https://linkedin.com/in/roopa-srinivas/" target="_blank">LinkedIn</a>
+    </div>
+  </div>
 </section>
 
 <footer>
-&copy; 2026 Roopa Srinivas — Built with care.
+  &copy; 2026 Roopa Srinivas — Built with care.
 </footer>
 </body>
 </html>
