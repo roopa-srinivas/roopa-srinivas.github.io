@@ -171,6 +171,18 @@ footer { background: #0D0B14; border-top: 1px solid var(--border); text-align: c
     <h2 class="section-title">Where I've worked<br>and what I've done.</h2>
     <div class="exp-list">
       <div class="exp-item">
+        <div class="exp-date">Jun – Aug 2026</div>
+        <div>
+          <div class="exp-role">Systems Engineering Intern</div>
+          <div class="exp-company">Precision Discovery Systems</div>
+          <ul class="exp-bullets">
+            <li>Contributed to the development of a life-science instrumentation platform for autonomous labs, working hands-on across embedded systems, motion control, and full-stack software.</li>
+            <li>Worked on system mechanical performance and real-time control, integrating computer vision to support automated operation.</li>
+            <li>Developed and maintained control software using Python, FastAPI, and React, enabling operator-facing workflows for the instrument.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="exp-item">
         <div class="exp-date">Dec 2025 – Present</div>
         <div>
           <div class="exp-role">AI/ML Engineer</div>
@@ -188,10 +200,9 @@ footer { background: #0D0B14; border-top: 1px solid var(--border); text-align: c
           <div class="exp-role">Software Engineering Intern</div>
           <div class="exp-company">Arcadia Science</div>
           <ul class="exp-bullets">
-            <li>Built sample tracking and experiment logging features in React and TypeScript, enabling scientists to record and query genomic results.</li>
-            <li>Integrated REST APIs with a FastAPI backend to manage biological sample metadata across multi-week experiment timelines.</li>
-            <li>Wrote unit tests with Jest to bring coverage to 70%+ on core workflows, catching edge cases before reaching researchers.</li>
-            <li>Shipped features used directly by in-house biologists weekly, collaborating with engineers and scientists in an Agile environment.</li>
+            <li>Built data pipeline integrations using REST APIs and FastAPI to collect, store, and retrieve structured biological metadata across long-running experiment workflows.</li>
+            <li>Developed frontend interfaces in React and TypeScript enabling end users to query and visualize structured experiment data across projects.</li>
+            <li>Wrote unit tests with Jest to bring coverage to 70%+ on core data workflows, catching validation edge cases before reaching researchers.</li>
           </ul>
         </div>
       </div>
@@ -201,9 +212,8 @@ footer { background: #0D0B14; border-top: 1px solid var(--border); text-align: c
           <div class="exp-role">Project Intern</div>
           <div class="exp-company">PainVox</div>
           <ul class="exp-bullets">
-            <li>Analyzed 10,000+ entries from Stanford clinical trials using LLMs to identify critical patterns and outliers in pain research data.</li>
-            <li>Authored research summaries supporting grant applications worth $500K–$2M.</li>
-            <li>Wrote successful award nominations for company medical professionals to the National Pain Consortium.</li>
+            <li>Analyzed 10,000+ entries from Stanford clinical trials using LLMs, surfacing critical patterns and outliers to support clinical research decision-making.</li>
+            <li>Synthesized data findings into research summaries supporting grant applications worth $500K–$2M.</li>
           </ul>
         </div>
       </div>
@@ -234,9 +244,7 @@ footer { background: #0D0B14; border-top: 1px solid var(--border); text-align: c
           <div class="exp-role">Instructor, Interviewer & Trainer</div>
           <div class="exp-company">Kodely</div>
           <ul class="exp-bullets">
-            <li>Conducted STEM workshops for elementary students in afterschool settings, creating interactive and standards-aligned activities to foster curiosity and foundational skills.</li>
-            <li>Evaluated candidate interviews to assess qualifications and fit for delivering enrichment programs.</li>
-            <li>Designed and facilitated training sessions to onboard new instructors, covering curriculum delivery, safety, and operational procedures.</li>
+            <li>Led STEM workshops for elementary students and trained incoming instructors on curriculum delivery, safety, and operational procedures.</li>
           </ul>
         </div>
       </div>
@@ -263,7 +271,7 @@ footer { background: #0D0B14; border-top: 1px solid var(--border); text-align: c
         <div class="project-card">
           <span class="project-tag">Web Application</span>
           <h3 class="project-name">Boost Your Community</h3>
-          <p class="project-desc">A community-driven donation platform connecting local donors with homeless shelters to address food, water, and clothing shortages in real-time. Features an interactive map, request verification system, and gamification to drive donor engagement.</p>
+          <p class="project-desc">A community-driven donation platform connecting local donors with homeless shelters to address food, water, and clothing shortages in real-time. Features an interactive map interface and a request verification system enabling needs submission via help centers.</p>
           <div class="tech-tags">
             <span class="tech-tag">HTML/CSS/JS</span><span class="tech-tag">Tailwind CSS</span><span class="tech-tag">Leaflet.js</span><span class="tech-tag">DiceBear API</span>
           </div>
@@ -273,12 +281,20 @@ footer { background: #0D0B14; border-top: 1px solid var(--border); text-align: c
         <div class="project-card">
           <span class="project-tag">Full-Stack Application</span>
           <h3 class="project-name">Grocery Store App</h3>
-          <p class="project-desc">A full-stack grocery store app with a Python Flask backend and MySQL database, supporting inventory management and order processing with a relational schema for structured querying.</p>
+          <p class="project-desc">A full-stack grocery store app with a Python Flask backend and MySQL database, supporting inventory management and order processing. Tailored for grocery store managers with features scoped around inventory oversight and order management workflows.</p>
           <div class="tech-tags">
             <span class="tech-tag">Python Flask</span><span class="tech-tag">MySQL</span><span class="tech-tag">HTML/CSS/JS</span>
           </div>
         </div>
       </a>
+      <div class="project-card">
+        <span class="project-tag">Financial Tool</span>
+        <h3 class="project-name">Investment Indexer</h3>
+        <p class="project-desc">A Python tool to rank top and bottom-performing investment indexes over 15 years, analyzing 1,000+ stocks and funds. Leverages Pandas for data manipulation and aggregation, generating sortable performance reports across configurable time windows.</p>
+        <div class="tech-tags">
+          <span class="tech-tag">Python</span><span class="tech-tag">Pandas</span>
+        </div>
+      </div>
       <a href="https://roopa-srinivas.github.io/COVIDVaccineTracker/" target="_blank" style="text-decoration: none; display: contents;">
         <div class="project-card">
           <span class="project-tag">Data Visualization</span>
@@ -289,14 +305,6 @@ footer { background: #0D0B14; border-top: 1px solid var(--border); text-align: c
           </div>
         </div>
       </a>
-      <div class="project-card">
-        <span class="project-tag">Financial Tool</span>
-        <h3 class="project-name">Investment Indexer</h3>
-        <p class="project-desc">A Python tool to rank top and bottom-performing investment indexes over 15 years, analyzing 1,000+ stocks and funds with sortable performance reports across configurable time windows.</p>
-        <div class="tech-tags">
-          <span class="tech-tag">Python</span>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -315,7 +323,7 @@ footer { background: #0D0B14; border-top: 1px solid var(--border); text-align: c
       <div>
         <p class="skill-group-title">Tools & Frameworks</p>
         <ul class="skill-list">
-          <li>React</li><li>Flask</li><li>FastAPI</li><li>MySQL</li><li>Jest</li><li>Git</li><li>Figma</li><li>Linear</li>
+          <li>React</li><li>Flask</li><li>FastAPI</li><li>MySQL</li><li>Jest</li><li>Git</li><li>Figma</li><li>Linear</li><li>Pandas</li><li>NumPy</li>
         </ul>
       </div>
       <div>
