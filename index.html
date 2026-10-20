@@ -9,27 +9,73 @@
 <meta property="og:description" content="EECS + Bioengineering at UC Berkeley. Software engineering across full-stack apps, lab automation and AI/ML."/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://roopa-srinivas.github.io/"/>
-<meta name="theme-color" content="#13111C"/>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2313111C'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' text-anchor='middle' fill='%239B59F5'%3ERS%3C/text%3E%3C/svg%3E"/>
+<meta name="theme-color" content="#0B1220" media="(prefers-color-scheme: dark)"/>
+<meta name="theme-color" content="#F6F8FC" media="(prefers-color-scheme: light)"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B1220'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' text-anchor='middle' fill='%2360A5FA'%3ERS%3C/text%3E%3C/svg%3E"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet"/>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* Midnight navy by default (dark devices); Paper & navy when the visitor's
+   device is set to light mode. Every color below comes from these tokens. */
 :root {
-  --bg: #13111C;
-  --surface: #1E1A2E;
-  --surface2: #251F38;
-  --ink: #F0ECFF;
-  --ink2: #C4BCE2;
-  --ink3: #8E84B4;
-  --accent: #7C3AED;
-  --accent-mid: #9B59F5;
-  --accent-soft: #B79BFA;
-  --accent-pale: rgba(124,58,237,0.15);
-  --border: rgba(167,139,250,0.15);
+  color-scheme: dark;
+  --bg: #0B1220;
+  --surface: #111A2D;
+  --surface2: #16213A;
+  --ink: #EAF0FA;
+  --ink2: #B6C3D9;
+  --ink3: #8293B0;
+  --accent: #3B82F6;
+  --accent-hover: #2563EB;
+  --on-accent: #FFFFFF;
+  --accent-mid: #60A5FA;
+  --accent-soft: #93C5FD;
+  --accent-pale: rgba(59,130,246,0.15);
+  --tag-border: rgba(147,197,253,0.2);
+  --border: rgba(147,197,253,0.15);
+  --nav-bg: rgba(11,18,32,0.92);
+  --now-bg: rgba(22,33,58,0.75);
+  --footer-bg: #070C16;
+  --live: #4ADE80;
+  --live-ring: rgba(74,222,128,0.15);
+  --live-border: rgba(74,222,128,0.35);
+  --frame: #050911;
+  --shot-shadow: rgba(0,0,0,0.7);
+  --shot-border: rgba(255,255,255,0.12);
+  --glow: 0.12;
   --serif: 'DM Serif Display', Georgia, serif;
   --sans: 'DM Sans', system-ui, sans-serif;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+    --bg: #F6F8FC;
+    --surface: #EDF1F8;
+    --surface2: #FFFFFF;
+    --ink: #0F1B2D;
+    --ink2: #3F4D66;
+    --ink3: #5E6B82;
+    --accent: #1D4ED8;
+    --accent-hover: #1E40AF;
+    --on-accent: #FFFFFF;
+    --accent-mid: #2563EB;
+    --accent-soft: #1D4ED8;
+    --accent-pale: rgba(29,78,216,0.08);
+    --tag-border: rgba(29,78,216,0.18);
+    --border: rgba(15,27,45,0.11);
+    --nav-bg: rgba(246,248,252,0.92);
+    --now-bg: rgba(255,255,255,0.85);
+    --footer-bg: #E7ECF5;
+    --live: #15803D;
+    --live-ring: rgba(21,128,61,0.15);
+    --live-border: rgba(21,128,61,0.35);
+    --frame: #0F1B2D;
+    --shot-shadow: rgba(15,27,45,0.28);
+    --shot-border: rgba(15,27,45,0.12);
+    --glow: 0.07;
+  }
 }
 html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
 body { font-family: var(--sans); background: var(--bg); color: var(--ink); font-size: 17px; line-height: 1.7; overflow-x: hidden; }
@@ -40,7 +86,7 @@ nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between; gap: 1rem;
   padding: 1.1rem 3rem;
-  background: rgba(19,17,28,0.92);
+  background: var(--nav-bg);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
 }
@@ -56,7 +102,7 @@ section { padding: 7rem 0; }
 
 /* ---------- hero ---------- */
 #hero { min-height: 100vh; display: flex; align-items: center; padding-top: 6rem; padding-bottom: 3rem; position: relative; overflow: hidden; }
-#hero::before { content: ''; position: absolute; top: -120px; right: -120px; width: 520px; height: 520px; border-radius: 50%; background: var(--accent); opacity: 0.12; pointer-events: none; }
+#hero::before { content: ''; position: absolute; top: -120px; right: -120px; width: 520px; height: 520px; border-radius: 50%; background: var(--accent); opacity: var(--glow); pointer-events: none; }
 #hero::after { content: ''; position: absolute; bottom: -80px; left: -80px; width: 300px; height: 300px; border-radius: 50%; background: var(--accent-mid); opacity: 0.07; pointer-events: none; }
 .hero-grid { display: grid; grid-template-columns: 1.45fr 1fr; gap: 3rem; align-items: center; position: relative; z-index: 1; }
 .hero-eyebrow { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-soft); margin-bottom: 1.25rem; }
@@ -67,14 +113,14 @@ section { padding: 7rem 0; }
 
 .btn { display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.65rem 1.15rem; border-radius: 100px; font-family: var(--sans); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; cursor: pointer; }
 .btn svg { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; }
-.btn-primary { background: var(--accent); color: #fff; border: 1.5px solid var(--accent); }
-.btn-primary:hover { background: #6D28D9; border-color: #6D28D9; }
+.btn-primary { background: var(--accent); color: var(--on-accent); border: 1.5px solid var(--accent); }
+.btn-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
 .btn-outline { background: transparent; color: var(--ink); border: 1.5px solid var(--border); }
 .btn-outline:hover { border-color: var(--accent-mid); color: var(--accent-soft); }
 
-.now { background: rgba(37,31,56,0.75); border: 1px solid var(--border); border-radius: 18px; padding: 1.6rem; backdrop-filter: blur(6px); }
+.now { background: var(--now-bg); border: 1px solid var(--border); border-radius: 18px; padding: 1.6rem; backdrop-filter: blur(6px); }
 .now-title { display: flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink3); margin-bottom: 1.1rem; }
-.now-title .dot { width: 8px; height: 8px; border-radius: 50%; background: #4ADE80; box-shadow: 0 0 0 4px rgba(74,222,128,0.15); }
+.now-title .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--live); box-shadow: 0 0 0 4px var(--live-ring); }
 .now-list { list-style: none; display: flex; flex-direction: column; gap: 1.1rem; }
 .now-list li { display: grid; grid-template-columns: 2.25rem 1fr; gap: 0.75rem; align-items: start; }
 .now-icon { width: 2.25rem; height: 2.25rem; border-radius: 10px; background: var(--accent-pale); color: var(--accent-soft); display: flex; align-items: center; justify-content: center; }
@@ -99,7 +145,7 @@ section { padding: 7rem 0; }
 .exp-item { display: grid; grid-template-columns: 190px 1fr; gap: 2rem; padding: 2rem 0; border-bottom: 1px solid var(--border); }
 .exp-item:first-child { border-top: 1px solid var(--border); }
 .exp-date { font-size: 0.85rem; color: var(--ink3); letter-spacing: 0.02em; padding-top: 0.2rem; }
-.exp-current { display: inline-block; margin-top: 0.4rem; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: #4ADE80; border: 1px solid rgba(74,222,128,0.35); border-radius: 100px; padding: 0.05rem 0.55rem; }
+.exp-current { display: inline-block; margin-top: 0.4rem; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--live); border: 1px solid var(--live-border); border-radius: 100px; padding: 0.05rem 0.55rem; }
 .exp-role { font-weight: 500; font-size: 1.05rem; color: var(--ink); margin-bottom: 0.15rem; }
 .exp-company { font-size: 0.92rem; color: var(--accent-soft); margin-bottom: 0.75rem; font-weight: 500; }
 .exp-bullets { padding-left: 1.1rem; }
@@ -111,13 +157,13 @@ section { padding: 7rem 0; }
 .featured .project-name { font-size: 2rem; }
 .featured .project-desc { font-size: 1rem; }
 .featured > a { display: block; min-width: 0; }
-.featured-shot { width: 100%; height: auto; border-radius: 30px; border: 8px solid #0D0B14; box-shadow: 0 24px 50px -16px rgba(0,0,0,0.7); display: block; transform: rotate(2deg); transition: transform 0.3s; }
+.featured-shot { width: 100%; height: auto; border-radius: 30px; border: 8px solid var(--frame); box-shadow: 0 24px 50px -16px var(--shot-shadow); display: block; transform: rotate(2deg); transition: transform 0.3s; }
 .featured:hover .featured-shot { transform: rotate(0deg) translateY(-4px); }
 .highlights { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1.25rem; margin: 0 0 1.5rem; }
 .highlights li { font-size: 0.9rem; color: var(--ink2); padding-left: 1.2rem; position: relative; line-height: 1.5; }
 .highlights li::before { content: ''; position: absolute; left: 0; top: 0.5em; width: 7px; height: 7px; border-radius: 50%; background: var(--accent-mid); }
 .featured.landscape { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); }
-.featured.landscape .featured-shot { border-radius: 12px; border: 1px solid rgba(255,255,255,0.12); transform: rotate(-1.5deg); }
+.featured.landscape .featured-shot { border-radius: 12px; border: 1px solid var(--shot-border); transform: rotate(-1.5deg); }
 .featured.landscape .highlights { grid-template-columns: 1fr; }
 .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
 .project-card { padding: 1.75rem; border: 1px solid var(--border); border-radius: 18px; background: var(--surface2); transition: border-color 0.2s, transform 0.2s; display: flex; flex-direction: column; }
@@ -126,7 +172,7 @@ section { padding: 7rem 0; }
 .project-name { font-family: var(--serif); font-weight: 400; font-size: 1.4rem; color: var(--ink); margin-bottom: 0.6rem; line-height: 1.2; }
 .project-desc { font-size: 0.92rem; color: var(--ink2); font-weight: 300; flex: 1; margin-bottom: 1.25rem; line-height: 1.65; }
 .tech-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.25rem; }
-.tech-tag { font-size: 0.72rem; padding: 0.2rem 0.65rem; background: var(--accent-pale); color: var(--accent-soft); border-radius: 100px; font-weight: 500; letter-spacing: 0.03em; border: 1px solid rgba(167,139,250,0.2); }
+.tech-tag { font-size: 0.72rem; padding: 0.2rem 0.65rem; background: var(--accent-pale); color: var(--accent-soft); border-radius: 100px; font-weight: 500; letter-spacing: 0.03em; border: 1px solid var(--tag-border); }
 .project-links { display: flex; gap: 1.1rem; flex-wrap: wrap; margin-top: auto; }
 .project-links a { font-size: 0.88rem; font-weight: 500; color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem; border-bottom: 1.5px solid var(--accent-mid); padding-bottom: 1px; transition: color 0.2s; }
 .project-links a:hover { color: var(--accent-soft); }
@@ -149,7 +195,7 @@ section { padding: 7rem 0; }
 #contact p { color: var(--ink2); margin: 0 auto 2.25rem; font-weight: 300; max-width: 520px; }
 #contact .hero-links { justify-content: center; }
 
-footer { background: #0D0B14; border-top: 1px solid var(--border); text-align: center; padding: 1.5rem; font-size: 0.82rem; color: var(--ink3); }
+footer { background: var(--footer-bg); border-top: 1px solid var(--border); text-align: center; padding: 1.5rem; font-size: 0.82rem; color: var(--ink3); }
 
 @media (max-width: 900px) {
   .hero-grid { grid-template-columns: 1fr; gap: 3rem; }
@@ -383,20 +429,24 @@ footer { background: #0D0B14; border-top: 1px solid var(--border); text-align: c
 
     <div class="projects-grid">
       <article class="project-card">
-        <span class="project-tag">Full-Stack Web App</span>
+        <span class="project-tag">Full-Stack Web App · Rebuilt 2026</span>
         <h3 class="project-name">Grocery Store App</h3>
-        <p class="project-desc">A full-stack grocery store app for store managers, with a Python Flask backend and a relational MySQL schema for products, stock levels and customer orders, supporting inventory oversight and order processing.</p>
-        <div class="tech-tags"><span class="tech-tag">Python Flask</span><span class="tech-tag">MySQL</span><span class="tech-tag">HTML/CSS/JS</span></div>
+        <p class="project-desc">A storefront and manager tools on a relational MySQL schema behind a Flask API. Orders take stock in one atomic step, so two shoppers can never buy the same last item; a test races 20 of them against a real MySQL server to prove it.</p>
+        <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag">Flask</span><span class="tech-tag">MySQL</span><span class="tech-tag">SQLAlchemy</span><span class="tech-tag">pytest</span></div>
         <div class="project-links">
           <a href="https://roopa-srinivas.github.io/GroceryStoreApplication/" target="_blank" rel="noopener"><svg><use href="#i-arrow"/></svg>Project page</a>
           <a href="https://github.com/roopa-srinivas/GroceryStoreApplication" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg>Code</a>
         </div>
       </article>
       <article class="project-card">
-        <span class="project-tag">Financial Analysis Tool</span>
+        <span class="project-tag">Financial Analysis · Rebuilt 2026</span>
         <h3 class="project-name">Investment Indexer</h3>
-        <p class="project-desc">A Python tool that ranks the top and bottom-performing investment indexes over 15 years across 1,000+ stocks and funds, using Pandas to generate sortable performance reports over configurable time windows.</p>
-        <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag">Pandas</span></div>
+        <p class="project-desc">Ranks 125 US stock market indexes by growth, risk and worst drop over 1 to 50 years, using pandas on the Fama-French research data. Its sharpest finding: none of the top 10 from 1996–2011 stayed in the top 10 for 2011–2026.</p>
+        <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag">pandas</span><span class="tech-tag">NumPy</span><span class="tech-tag">D3.js</span><span class="tech-tag">pytest</span></div>
+        <div class="project-links">
+          <a href="https://roopa-srinivas.github.io/InvestmentIndexer/" target="_blank" rel="noopener"><svg><use href="#i-arrow"/></svg>Live report</a>
+          <a href="https://github.com/roopa-srinivas/InvestmentIndexer" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg>Code</a>
+        </div>
       </article>
     </div>
   </div>
