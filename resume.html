@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Resume - Roopa Srinivas</title>
+<meta name="description" content="Resume of Roopa Srinivas, EECS + Bioengineering at UC Berkeley."/>
+<meta name="theme-color" content="#13111C"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2313111C'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' text-anchor='middle' fill='%239B59F5'%3ERS%3C/text%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet"/>
+<style>
+/* The resume as a page to read, not a file to download: there's no PDF on
+   the site, and printing shows a note instead of the resume. */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #13111C;
+  --border: rgba(167,139,250,0.15);
+  --ink-dark: #F0ECFF;
+  --ink2-dark: #C4BCE2;
+  --accent: #7C3AED;
+  --accent-soft: #B79BFA;
+  --paper: #FFFFFF;
+  --paper-ink: #1B1726;
+  --paper-ink2: #4A4360;
+  --paper-rule: #DDD6EE;
+  --serif: 'DM Serif Display', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+}
+body { font-family: var(--sans); background: var(--bg); color: var(--ink-dark); line-height: 1.5; padding: 5.5rem 1rem 3rem; overflow-x: hidden; }
+:focus-visible { outline: 2px solid var(--accent-soft); outline-offset: 3px; border-radius: 4px; }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 2rem; background: rgba(19,17,28,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
+.back { color: var(--ink2-dark); text-decoration: none; font-size: 0.9rem; border: 1.5px solid var(--border); border-radius: 100px; padding: 0.35rem 0.95rem; transition: all 0.2s; white-space: nowrap; }
+.back:hover { color: var(--accent-soft); border-color: #9B59F5; }
+.nav-note { font-size: 0.85rem; color: var(--ink2-dark); }
+.nav-note a { color: var(--accent-soft); }
+
+.sheet { max-width: 850px; margin: 0 auto; background: var(--paper); color: var(--paper-ink); border-radius: 6px; padding: 3.25rem 3.5rem; box-shadow: 0 30px 60px -20px rgba(0,0,0,0.6); font-size: 0.92rem; }
+header { display: flex; justify-content: space-between; align-items: flex-end; gap: 1.5rem; flex-wrap: wrap; padding-bottom: 1rem; border-bottom: 2px solid var(--paper-ink); }
+h1 { font-family: var(--serif); font-weight: 400; font-size: 2.4rem; line-height: 1; }
+.contact { text-align: right; font-size: 0.85rem; color: var(--paper-ink2); line-height: 1.6; }
+.contact a { color: var(--accent); text-decoration: none; }
+.contact a:hover { text-decoration: underline; }
+h2 { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin: 1.6rem 0 0.6rem; padding-bottom: 0.3rem; border-bottom: 1px solid var(--paper-rule); }
+.entry { margin-bottom: 0.9rem; }
+.entry-head { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; align-items: baseline; }
+.entry-title { font-weight: 700; }
+.entry-title span { font-weight: 400; color: var(--paper-ink2); }
+.entry-date { font-size: 0.85rem; color: var(--paper-ink2); white-space: nowrap; }
+.entry-sub { color: var(--paper-ink2); font-size: 0.88rem; }
+ul { padding-left: 1.15rem; margin-top: 0.3rem; }
+li { margin-bottom: 0.2rem; color: var(--paper-ink); }
+li::marker { color: var(--accent); }
+.skills p { margin-bottom: 0.25rem; }
+.skills b { font-weight: 700; }
+
+.print-note { display: none; }
+@media print {
+  nav, .sheet { display: none !important; }
+  body { background: #fff; color: #000; padding: 2rem; }
+  .print-note { display: block; font-family: Georgia, serif; font-size: 14pt; }
+}
+@media (max-width: 640px) {
+  nav { padding: 0.85rem 1rem; }
+  .nav-note { display: none; }
+  body { padding: 4.75rem 0.5rem 2rem; }
+  .sheet { padding: 1.75rem 1.25rem; font-size: 0.9rem; }
+  h1 { font-size: 2rem; }
+  .contact { text-align: left; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <a class="back" href="./">← Back to portfolio</a>
+  <span class="nav-note">Need a copy? <a href="mailto:roopasrinivas@berkeley.edu">Email me</a></span>
+</nav>
+
+<main class="sheet" aria-label="Resume">
+  <header>
+    <h1>Roopa Srinivas</h1>
+    <div class="contact">
+      <a href="mailto:roopasrinivas@berkeley.edu">roopasrinivas@berkeley.edu</a><br>
+      <a href="https://linkedin.com/in/roopa-srinivas/" target="_blank" rel="noopener">linkedin.com/in/roopa-srinivas</a><br>
+      Berkeley, CA
+    </div>
+  </header>
+
+  <h2>Education</h2>
+  <div class="entry">
+    <div class="entry-head"><div class="entry-title">University of California, Berkeley</div><div class="entry-date">Expected Graduation: December 2026</div></div>
+    <div>B.S. Electrical Engineering and Computer Science, Minor in Bioengineering</div>
+    <div class="entry-sub">Relevant Coursework: Introduction to Artificial Intelligence, Machine Learning for Computational Biology, Foundations of Computer Graphics, Structure and Interpretation of Computer Systems, Data Abstraction and Structures, Instrumentation in Biology and Medicine, Physiology</div>
+  </div>
+
+  <h2>Experience</h2>
+  <div class="entry">
+    <div class="entry-head"><div class="entry-title">Software Engineering Intern <span>| Precision Discovery Systems</span></div><div class="entry-date">June 2026 – September 2026</div></div>
+    <ul>
+      <li>Contributed to the development of a life-science instrumentation platform for autonomous labs, working hands-on across embedded systems, motion control, and full-stack software.</li>
+      <li>Worked on system mechanical performance and real-time control, integrating computer vision to support automated operation.</li>
+      <li>Developed and maintained control software using Python, FastAPI, and React, enabling operator-facing workflows for the instrument.</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><div class="entry-title">AI/ML Engineer <span>| Handshake AI Fellowship</span></div><div class="entry-date">December 2025 – Present</div></div>
+    <ul>
+      <li>Evaluated and ranked LLM-generated responses across complex subject-specific prompts to improve reasoning quality via RLHF.</li>
+      <li>Audited multi-turn dialogues for logical consistency and instruction following, contributing feedback to next-generation model training.</li>
+      <li>Applied EECS and biology domain knowledge to assess model accuracy on technical problem-solving tasks.</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><div class="entry-title">Software Engineering Intern <span>| Infera</span></div><div class="entry-date">June 2025 – August 2025</div></div>
+    <ul>
+      <li>Built data pipeline integrations using REST APIs and FastAPI to collect, store, and retrieve structured biological metadata across long-running experiment workflows.</li>
+      <li>Developed frontend interfaces in React and TypeScript enabling end users to query and visualize structured experiment data across projects.</li>
+      <li>Wrote unit tests with Jest to bring coverage to 70%+ on core data workflows, catching validation edge cases before reaching researchers.</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><div class="entry-title">Project Intern <span>| PainVox</span></div><div class="entry-date">September 2023 – December 2023</div></div>
+    <ul>
+      <li>Analyzed 10,000+ entries from Stanford clinical trials using LLMs, surfacing critical patterns and outliers to support clinical research decision-making.</li>
+      <li>Synthesized data findings into research summaries supporting grant applications worth $500K–$2M.</li>
+    </ul>
+  </div>
+
+  <h2>Projects</h2>
+  <div class="entry">
+    <div class="entry-head"><div class="entry-title">Boost Your Community <span>| Web Application</span></div></div>
+    <div class="entry-sub">HTML, CSS, JavaScript, Tailwind CSS, Leaflet.js, Leaflet.markercluster, DiceBear API</div>
+    <ul>
+      <li>Developed a community-driven donation platform connecting local donors with homeless shelters to address food, water, and clothing shortages in real-time.</li>
+      <li>Built interactive map interface displaying shelter locations with time-sensitive donation needs and specific quantity requirements.</li>
+      <li>Implemented request verification system enabling homeless individuals to submit needs via help centers and receive collection tickets.</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><div class="entry-title">Grocery Store Application <span>| Full-Stack Web Application</span></div></div>
+    <div class="entry-sub">Python Flask, MySQL, HTML/CSS, JavaScript</div>
+    <ul>
+      <li>Built a full-stack grocery store app with a Python Flask backend and MySQL database, supporting inventory management and order processing.</li>
+      <li>Designed relational database schema to organize product listings, stock levels, and customer orders, enabling structured querying across the application.</li>
+      <li>Tailored the interface for grocery store managers, scoping features around inventory oversight and order management workflows.</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><div class="entry-title">Investment Indexer <span>| Financial Analysis Tool</span></div></div>
+    <div class="entry-sub">Python</div>
+    <ul>
+      <li>Built a Python tool to rank top and bottom-performing investment indexes over 15 years, analyzing 1,000+ stocks and funds from financial data sources.</li>
+      <li>Generated sortable performance reports to surface trends and compare fund returns across configurable time windows.</li>
+      <li>Leveraged Pandas for data manipulation and aggregation, enabling efficient processing and ranking of large financial datasets.</li>
+    </ul>
+  </div>
+
+  <h2>Leadership &amp; Activities</h2>
+  <div class="entry">
+    <div class="entry-head"><div class="entry-title">Logistics Captain <span>| UC Berkeley Zahanat</span></div><div class="entry-date">May 2025 – April 2026</div></div>
+    <ul>
+      <li>Spearheaded logistics for a nationally competitive dance team, coordinating travel, accommodations, and registrations for competitions.</li>
+      <li>Managed team scheduling and rehearsal calendars for 20+ members, aligning intensive training timelines with national competition deadlines.</li>
+      <li>Competed as a dancer while simultaneously managing travel and competition logistics, contributing to multiple awards.</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><div class="entry-title">Instructor, Interviewer and Trainer <span>| Kodely</span></div><div class="entry-date">August 2025 – December 2025</div></div>
+    <ul>
+      <li>Led STEM workshops for elementary students and trained incoming instructors on curriculum delivery, safety, and operational procedures.</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><div class="entry-title">Mechanical Lead <span>| Homestead Robotics, Team 670</span></div><div class="entry-date">May 2022 – May 2023</div></div>
+    <ul>
+      <li>Led design and fabrication of a 120-pound competition robot over an 8-week build season using CAD and CNC software.</li>
+    </ul>
+  </div>
+
+  <h2>Key Skills</h2>
+  <div class="skills">
+    <p><b>Languages:</b> Java, Python, SQL, C++, HTML/CSS, JavaScript, TypeScript</p>
+    <p><b>Tools &amp; Frameworks:</b> React, Flask, FastAPI, MySQL, Jest, Git, Figma, Linear, Pandas, NumPy</p>
+  </div>
+</main>
+
+<p class="print-note">Roopa Srinivas's resume is available on request: roopasrinivas@berkeley.edu</p>
+</body>
+</html>
