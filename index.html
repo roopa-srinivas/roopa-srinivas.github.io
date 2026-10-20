@@ -116,6 +116,9 @@ section { padding: 7rem 0; }
 .highlights { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1.25rem; margin: 0 0 1.5rem; }
 .highlights li { font-size: 0.9rem; color: var(--ink2); padding-left: 1.2rem; position: relative; line-height: 1.5; }
 .highlights li::before { content: ''; position: absolute; left: 0; top: 0.5em; width: 7px; height: 7px; border-radius: 50%; background: var(--accent-mid); }
+.featured.landscape { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); }
+.featured.landscape .featured-shot { border-radius: 12px; border: 1px solid rgba(255,255,255,0.12); transform: rotate(-1.5deg); }
+.featured.landscape .highlights { grid-template-columns: 1fr; }
 .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
 .project-card { padding: 1.75rem; border: 1px solid var(--border); border-radius: 18px; background: var(--surface2); transition: border-color 0.2s, transform 0.2s; display: flex; flex-direction: column; }
 .project-card:hover { border-color: var(--accent-mid); transform: translateY(-2px); }
@@ -152,6 +155,10 @@ footer { background: #0D0B14; border-top: 1px solid var(--border); text-align: c
   .hero-grid { grid-template-columns: 1fr; gap: 3rem; }
   .featured { grid-template-columns: 1fr 190px; gap: 2rem; }
   .highlights { grid-template-columns: 1fr; }
+}
+@media (max-width: 900px) {
+  .featured.landscape { grid-template-columns: 1fr; }
+  .featured.landscape > a { order: 2; }
 }
 @media (max-width: 640px) {
   .featured { grid-template-columns: 1fr; }
@@ -326,7 +333,7 @@ footer { background: #0D0B14; border-top: 1px solid var(--border); text-align: c
 
     <article class="featured">
       <div>
-        <span class="project-tag">Featured · Mobile &amp; Web App</span>
+        <span class="project-tag">Mobile &amp; Web App</span>
         <h3 class="project-name">Boost Your Community</h3>
         <p class="project-desc">A donation app connecting neighbors with homeless shelters in real time, grown from a prototype into a full iOS, Android and web app. Shelters post specific, time-boxed needs, and donors pledge exactly what they can bring.</p>
         <ul class="highlights">
@@ -351,6 +358,29 @@ footer { background: #0D0B14; border-top: 1px solid var(--border); text-align: c
       </a>
     </article>
 
+    <article class="featured landscape">
+      <a href="https://roopa-srinivas.github.io/COVIDVaccineTracker/dashboard/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+        <img class="featured-shot" src="images/covid-dashboard.jpg" width="1504" height="812" alt="" decoding="async" loading="lazy"/>
+      </a>
+      <div>
+        <span class="project-tag">Data Visualization · AP CS Capstone, rebuilt 2026</span>
+        <h3 class="project-name">COVID Vaccine Tracker</h3>
+        <p class="project-desc">An interactive map of COVID-19 vaccinations, cases and deaths in every state from 2020 to 2023. It started as a three-person Java app for our 2021 AP Computer Science capstone; I rebuilt it as a web dashboard around the features our original design doc never got to.</p>
+        <ul class="highlights">
+          <li>Week-by-week timeline you can scrub or play</li>
+          <li>Map colored by vaccinations, cases or deaths</li>
+          <li>A trend forecast checked against what happened</li>
+          <li>Python pipeline over NYT and Our World in Data</li>
+        </ul>
+        <div class="tech-tags"><span class="tech-tag">D3.js</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Python</span><span class="tech-tag">Java</span><span class="tech-tag">Processing</span></div>
+        <div class="project-links">
+          <a href="https://roopa-srinivas.github.io/COVIDVaccineTracker/dashboard/" target="_blank" rel="noopener"><svg><use href="#i-arrow"/></svg>Open the dashboard</a>
+          <a href="https://roopa-srinivas.github.io/COVIDVaccineTracker/" target="_blank" rel="noopener"><svg><use href="#i-arrow"/></svg>Project page</a>
+          <a href="https://github.com/roopa-srinivas/COVIDVaccineTracker" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg>Code</a>
+        </div>
+      </div>
+    </article>
+
     <div class="projects-grid">
       <article class="project-card">
         <span class="project-tag">Full-Stack Web App</span>
@@ -367,17 +397,6 @@ footer { background: #0D0B14; border-top: 1px solid var(--border); text-align: c
         <h3 class="project-name">Investment Indexer</h3>
         <p class="project-desc">A Python tool that ranks the top and bottom-performing investment indexes over 15 years across 1,000+ stocks and funds, using Pandas to generate sortable performance reports over configurable time windows.</p>
         <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag">Pandas</span></div>
-      </article>
-      <article class="project-card">
-        <span class="project-tag">Data Visualization · AP CS Capstone, rebuilt 2026</span>
-        <h3 class="project-name">COVID Vaccine Tracker</h3>
-        <p class="project-desc">An interactive map of COVID-19 vaccinations, cases and deaths in every state from 2020 to 2023. It started as a three-person Java app for our 2021 AP Computer Science capstone; I rebuilt it as a web dashboard with a week-by-week timeline, state comparisons and a forecast checked against what actually happened.</p>
-        <div class="tech-tags"><span class="tech-tag">D3.js</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Python</span><span class="tech-tag">Java</span><span class="tech-tag">Processing</span></div>
-        <div class="project-links">
-          <a href="https://roopa-srinivas.github.io/COVIDVaccineTracker/dashboard/" target="_blank" rel="noopener"><svg><use href="#i-arrow"/></svg>Open the dashboard</a>
-          <a href="https://roopa-srinivas.github.io/COVIDVaccineTracker/" target="_blank" rel="noopener"><svg><use href="#i-arrow"/></svg>Project page</a>
-          <a href="https://github.com/roopa-srinivas/COVIDVaccineTracker" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg>Code</a>
-        </div>
       </article>
     </div>
   </div>
