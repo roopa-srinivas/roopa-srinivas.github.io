@@ -166,6 +166,7 @@ section { padding: 7rem 0; }
 .featured.landscape .featured-shot { border-radius: 12px; border: 1px solid var(--shot-border); transform: rotate(-1.5deg); }
 .featured.landscape .highlights { grid-template-columns: 1fr; }
 .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+.projects-grid + .projects-grid { margin-top: 1.5rem; }
 .project-card { padding: 1.75rem; border: 1px solid var(--border); border-radius: 18px; background: var(--surface2); transition: border-color 0.2s, transform 0.2s; display: flex; flex-direction: column; }
 .project-card:hover { border-color: var(--accent-mid); transform: translateY(-2px); }
 .project-tag { display: inline-block; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-soft); font-weight: 500; margin-bottom: 0.6rem; }
@@ -446,6 +447,27 @@ footer { background: var(--footer-bg); border-top: 1px solid var(--border); text
         <div class="project-links">
           <a href="https://roopa-srinivas.github.io/InvestmentIndexer/" target="_blank" rel="noopener"><svg><use href="#i-arrow"/></svg>Live report</a>
           <a href="https://github.com/roopa-srinivas/InvestmentIndexer" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg>Code</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="projects-grid">
+      <article class="project-card">
+        <span class="project-tag">In Progress · Chrome Extension</span>
+        <h3 class="project-name">Backpack</h3>
+        <p class="project-desc">Puts every assignment from Canvas, Gradescope and PrairieLearn on Google Calendar, formatted your way. Homework listed on two sites becomes one event, and the event moves when a due date changes or an extension is approved.</p>
+        <div class="tech-tags"><span class="tech-tag">TypeScript</span><span class="tech-tag">Chrome Extensions</span><span class="tech-tag">Google Calendar API</span><span class="tech-tag">Vitest</span></div>
+        <div class="project-links">
+          <a href="https://github.com/roopa-srinivas/Backpack" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg>Code</a>
+        </div>
+      </article>
+      <article class="project-card">
+        <span class="project-tag">In Progress · Chrome Extension</span>
+        <h3 class="project-name">Question Helper</h3>
+        <p class="project-desc">An AI study tutor in Chrome's side panel. It reads the practice problem on your tab and coaches you toward the answer, with hints that get more specific, feedback on your own attempts, and a worked solution once you've tried it.</p>
+        <div class="tech-tags"><span class="tech-tag">JavaScript</span><span class="tech-tag">Chrome Extensions</span><span class="tech-tag">Gemini API</span><span class="tech-tag">Claude API</span></div>
+        <div class="project-links">
+          <a href="https://github.com/roopa-srinivas/QuestionHelper" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg>Code</a>
         </div>
       </article>
     </div>
